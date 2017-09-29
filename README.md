@@ -2,7 +2,9 @@
 
 ## Latest build
 
-`wget https://github.com/paywithcurl/vault-update/releases/download/v1.0/vault-update`
+```
+wget https://github.com/paywithcurl/vault-update/releases/download/v1.0/vault-update
+```
 
 ## Overview
 
