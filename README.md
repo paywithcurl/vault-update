@@ -1,5 +1,9 @@
 # Vault-update
 
+## Latest build
+
+`wget https://github.com/paywithcurl/vault-update/releases/download/v1.0/vault-update`
+
 ## Overview
 
 The vault client does not allow for a single key in a secret to be updated, the current work around is
