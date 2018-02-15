@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"io/ioutil"
 
 	"github.com/hashicorp/vault/api"
 )
@@ -65,6 +66,14 @@ func main() {
 		if len(parts) != 2 {
 			fmt.Println("Invalid format, expected key=value")
 			os.Exit(1)
+		}
+		if strings.HasPrefix(parts[1], "@") {
+			contents, err := ioutil.ReadFile(parts[1][1:])
+			if err != nil {
+				fmt.Printf("Failed to read file: %s (%s)\n", parts[1], err)
+				os.Exit(1)
+			}
+			parts[1] = string(contents)
 		}
 		secret[parts[0]] = parts[1]
 	}
